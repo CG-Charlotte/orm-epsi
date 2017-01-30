@@ -6,7 +6,7 @@ import org.junit.Test;
 /**
  * Created by ccavalie on 30/01/2017.
  */
-public class DumbExerciceTest {
+public class DumbExerciceVerify {
 	DumbExercice  exercice = new DumbExercice();
 
     @Test
