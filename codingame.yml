@@ -1,8 +1,19 @@
+
 content:
-  title : Course title
+  title: Hibernate
   plan:
-    - title: The first chapter or lesson
-      description: This lesson will help you to discover ...
-      plan:
-        - title: The first lesson
-          description: This is the first lesson of the first chpater. This level is optional if only lessons are provided
+   - title: Welcome to ORM 101
+     description: Introduction
+     statement: course/Introduction.md
+
+projects:
+  hibernate:
+    builder:
+        name: codingame/maven3-builder
+        version: 1.0
+    runner:
+        name: codingame/junit4-runner
+        version: 1.0
+    srcDirectories:
+      - src/test/java/
+
