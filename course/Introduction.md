@@ -22,5 +22,4 @@ Connexion via driver
 ## Exercice: Manipulation de données
 
 @[Dumb Exercise]({"stubs": ["fr/ccavalier/hibernate/course/DumbExercice.java"], "command": "fr.cavalier.hibernate.course.DumbExerciceVerify#dumbTest"})
-@[Empty flux]({"stubs": ["io/pivotal/literx/Part01FluxEmpty.java"], "command": "io.pivotal.literx.Part01Flux#empty"})
 
