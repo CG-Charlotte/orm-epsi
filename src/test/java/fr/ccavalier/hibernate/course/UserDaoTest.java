@@ -27,7 +27,7 @@ public class UserDaoTest {
     public void setUp() {
         //db = new EmbeddedDatabaseBuilder().addDefaultScripts().build();
         db = new EmbeddedDatabaseBuilder()
-                .setType(EmbeddedDatabaseType.H2)
+                .setType(EmbeddedDatabaseType.DERBY)
                 .addScript("create-db.sql")
                 .addScript("insert-data.sql")
                 .build();
