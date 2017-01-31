@@ -21,5 +21,5 @@ Connexion via driver
 
 ## Exercice: Manipulation de données
 
-@[Dumb Exercise]({"stubs": ["fr/ccavalier/hibernate/course/DumbExercice.java"], "command": "fr.cavalier.hibernate.course.DumbExerciceVerify#dumbTest"})
+@[Dumb Exercise]({"stubs": ["fr/ccavalier/hibernate/course/DumbExercice.java"], "command": "fr.ccavalier.hibernate.course.DumbExerciceVerify#dumbTest"})
 
