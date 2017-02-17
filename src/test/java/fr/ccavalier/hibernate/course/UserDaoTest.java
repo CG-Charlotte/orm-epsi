@@ -48,6 +48,11 @@ public class UserDaoTest {
 
     }
 
+    @Test
+    public void testCreateTypePokemonAssociation(){
+
+    }
+
     @After
     public void tearDown() {
         db.shutdown();
