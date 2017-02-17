@@ -1,2 +1,6 @@
 # orm-epsi
-EPSI Montpellier course: ORM
+
+Comment interagir avec un SGBDR?
+Qu'est ce qu'un ORM?
+Mapping et Requetage
+Problemes standard 
