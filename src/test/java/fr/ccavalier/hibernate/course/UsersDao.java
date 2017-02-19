@@ -1,11 +1,12 @@
 package fr.ccavalier.hibernate.course;
-
+//[imports] { autofold
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+//
 
 /**
  * Created by charlotte on 19/02/17.
@@ -19,11 +20,15 @@ public class UsersDao {
         this.namedParameterJdbcTemplate = namedParameterJdbcTemplate;
     }
 
+    /**
+     * get all users from database
+     * @return List<User> All Users
+     */
     public List<User> findAll() {
 
         Map<String, Object> params = new HashMap<String, Object>();
 
-        String sql = "SELECT * FROM users";
+        String sql = "";// WRITE HERE YOUR REQUEST
 
         List<User> result = namedParameterJdbcTemplate.query(sql, params, new UserMapper());
 
