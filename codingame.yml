@@ -15,5 +15,5 @@ projects:
         name: codingame/junit4-runner
         version: 1.0
     srcDirectories:
-      - src/test/java/
+      - src/
 
