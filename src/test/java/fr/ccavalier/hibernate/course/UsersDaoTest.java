@@ -43,7 +43,9 @@ public class UsersDaoTest {
 
     @Test
     public void testFindAll(){
+        System.out.println("StartTest");
         List<User> users = usersDao.findAll();
+
         Assert.assertNotNull(users);
         Assert.assertEquals(3, users.size());
     }
