@@ -12,6 +12,8 @@ import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import java.util.List;
+
 /**
  * Created by ccavalie on 31/01/2017.
  */
@@ -31,26 +33,37 @@ public class UserDaoTest {
                 .addScript("create-db.sql")
                 .addScript("insert-data.sql")
                 .build();
+
+        NamedParameterJdbcTemplate template = new NamedParameterJdbcTemplate(db);
+        userDao = new UserDao();
+        userDao.setNamedParameterJdbcTemplate(template);
     }
 
     @Test
     public void testFindByname() {
-        NamedParameterJdbcTemplate template = new NamedParameterJdbcTemplate(db);
-        UserDao userDao = new UserDao();
-        userDao.setNamedParameterJdbcTemplate(template);
 
-        User user = userDao.findByName("mkyong");
+        User user = userDao.findByFirstName("Jean");
 
         Assert.assertNotNull(user);
         Assert.assertEquals(1, user.getId().intValue());
-        Assert.assertEquals("mkyong", user.getName());
-        Assert.assertEquals("mkyong@gmail.com", user.getEmail());
+        Assert.assertEquals("Jean", user.getFirstName());
+        Assert.assertEquals("Perpignan", user.getCity());
 
     }
 
-    @Test
-    public void testCreateTypePokemonAssociation(){
 
+
+    @Test
+    public void testAddUser(){
+
+        User user = new User();
+        user.setFirstName("Lara");
+        user.setLastName("Croft");
+        user.setCity("Southampton");
+        userDao.add(user);
+
+        User userFromDb = userDao.findByFirstName("Lara");
+        Assert.assertEquals(user.lastName, userFromDb.lastName);
     }
 
     @After

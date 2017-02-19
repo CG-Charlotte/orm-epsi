@@ -1,5 +1,5 @@
 package fr.ccavalier.hibernate.course;
-
+//[imports] { autofold
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
@@ -10,7 +10,7 @@ import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
+//}
 /**
  * Created by ccavalie on 31/01/2017.
  */
@@ -25,12 +25,12 @@ public class UserDao {
     }
 
 
-    public User findByName(String name) {
+    public User findByFirstName(String name) {
 
         Map<String, Object> params = new HashMap<String, Object>();
         params.put("name", name);
 
-        String sql = "";//Ecrire votre requete ici
+        String sql = "SELECT * from USERS where first_name='"+name+"'";//Ecrire votre requete ici
 
         User result = namedParameterJdbcTemplate.queryForObject(
                 sql,
@@ -43,25 +43,24 @@ public class UserDao {
 
     }
 
-    public List<User> findAll() {
 
+
+    public void add(User user) {
         Map<String, Object> params = new HashMap<String, Object>();
-
-        String sql = "SELECT * FROM users";
-
-        List<User> result = namedParameterJdbcTemplate.query(sql, params, new UserMapper());
-
-        return result;
-
+        String sql = "INSERT into users(first_name, last_name, address) values ('"+user.getFirstName()+"','"+user.getLastName()+"','"+user.getCity()+"')";
+        int value = namedParameterJdbcTemplate.update(sql, params);
+        
     }
+    
 
     private static final class UserMapper implements RowMapper<User> {
 
         public User mapRow(ResultSet rs, int rowNum) throws SQLException {
             User user = new User();
             user.setId(rs.getInt("id"));
-            user.setName(rs.getString("name"));
-            user.setEmail(rs.getString("email"));
+            user.setFirstName(rs.getString("first_name"));
+            user.setLastName(rs.getString("last_name"));
+            user.setCity(rs.getString("address"));
             return user;
         }
     }

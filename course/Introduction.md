@@ -1,25 +1,21 @@
-# Mapping Objet Relationnel
+# Rappels
 
-Les bases de données relationnelles sont installées depuis longtemps comme le standard de gestion des données dans les entreprises.
-Leur force réside majoritairement dans leur conception fiablem et dans la fiabilité de manipulation des données.
-Néanmoins, afin de pouvoir utiliser les données dans un environnement objet il est souvent necessaire d'implementer un grande quantité de code passe plat et des requetes complexes, sources de nombreux bugs.
-Pour simplifier cette utilisation, des outils de mapping objet relationnels permettent d'encapsuler cette complexité.
+Avant de pouvoir decouvrir les forces de l'ORM, il est necessaire de faire quelques rappels de SQL.
 
-?[Quel est le rôle d'un ORM ?]
-- [ ] Il permet de simplifier les développements
-- [x] Il ajoute une couche d'abstraction
-- [x] Il résoud les incoherences de paradigmes
+## Qu'est ce que le SQL
+Le SQL, 'Structured Query Language', est un langage de programmation concu pour manipuler les données stockées dans des
+bases de données relationnelles. Celui ci permet de concerver l'integrité et la cohérence des données en base, peut importe
+leur volume.
 
-## Rappels
-Quels sont les types de données à manipuler?
-Comment manipule t'on les données applicatives?
-Conception relationnelle
-SQL
-Requetage
-Definition de données
-Connexion via driver
+Bien qu'aujourd'hui son usage tende à legerement diminuer, grace à l'usage de base de données NoSql, il reste un standanrd de fait,
+utilisé sur la totalité des systèmes d'information.
 
-## Exercice: Manipulation de données
 
-@[Dumb Exercise]({"stubs": ["fr/ccavalier/hibernate/course/UserDao.java"], "command": "fr.ccavalier.hibernate.course.UserDaoTest#testFindByname"})
+Il est important de bien maitriser son usage avant de s'en abstraire. Nous pourrons ainsi faire un meilleur usage des outils de plus haut niveau.
+
+## Premier Exemple
+Essayons de modifier cette application JAVA de facon à recuperer la totalité des utilisateurs de la base.
+@[Dumb Exercise]({"stubs": ["fr/ccavalier/hibernate/course/UsersDao.java"], "command": "fr.ccavalier.hibernate.course.UsersDaoTest#git status"})
+
+
 
