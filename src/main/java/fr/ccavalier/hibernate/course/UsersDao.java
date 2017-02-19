@@ -30,7 +30,7 @@ public class UsersDao {
 
         Map<String, Object> params = new HashMap<String, Object>();
 
-        String sql = "Select * from users";
+        String sql = "";//write your request here
 
         List<User> result = namedParameterJdbcTemplate.query(sql, params, new UserMapper());
 
