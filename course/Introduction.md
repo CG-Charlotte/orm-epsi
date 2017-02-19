@@ -15,7 +15,7 @@ Il est important de bien maitriser son usage avant de s'en abstraire. Nous pourr
 
 ## Premier Exemple
 Essayons de modifier cette application JAVA de facon à recuperer la totalité des utilisateurs de la base.
-@[Dumb Exercise]({"stubs": ["fr/ccavalier/hibernate/course/UsersDao.java"], "command": "fr.ccavalier.hibernate.course.UsersDaoTest#git status"})
+@[Dumb Exercise]({"stubs": ["fr/ccavalier/hibernate/course/UsersDao.java"], "command": "fr.ccavalier.hibernate.course.UsersDaoTest#testFindAll"})
 
 
 
