@@ -25,6 +25,9 @@
     <bean id="userDao" class="fr.ccavalier.hibernate.course.UserDao" >
         <property name="namedParameterJdbcTemplate" ref="jdbcTemplate" />
     </bean>
+    <bean id="usersDao" class="fr.ccavalier.hibernate.course.UsersDao" >
+        <property name="namedParameterJdbcTemplate" ref="jdbcTemplate" />
+    </bean>
 
     <bean id="jdbcTemplate" class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate" >
         <!--

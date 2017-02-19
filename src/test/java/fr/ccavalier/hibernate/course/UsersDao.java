@@ -28,7 +28,7 @@ public class UsersDao {
 
         Map<String, Object> params = new HashMap<String, Object>();
 
-        String sql = "";// WRITE HERE YOUR REQUEST
+        String sql = "Select * from users";
 
         List<User> result = namedParameterJdbcTemplate.query(sql, params, new UserMapper());
 

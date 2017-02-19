@@ -22,7 +22,7 @@ public class UsersDaoTest {
 
     private EmbeddedDatabase db;
 
-    UsersDao userDao;
+    UsersDao usersDao;
 
     @Before
     public void setUp() {
@@ -34,13 +34,13 @@ public class UsersDaoTest {
                 .build();
 
         NamedParameterJdbcTemplate template = new NamedParameterJdbcTemplate(db);
-        userDao = new UsersDao();
-        userDao.setNamedParameterJdbcTemplate(template);
+        usersDao = new UsersDao();
+        usersDao.setNamedParameterJdbcTemplate(template);
     }
 
     @Test
     public void testFindAll(){
-        List<User> users = userDao.findAll();
+        List<User> users = usersDao.findAll();
         Assert.assertNotNull(users);
         Assert.assertEquals(3, users.size());
     }
