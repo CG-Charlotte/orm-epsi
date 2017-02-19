@@ -2,6 +2,7 @@ package fr.ccavalier.hibernate.course;
 //[imports] { autofold
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
 import java.util.List;
@@ -11,6 +12,7 @@ import java.util.Map;
 /**
  * Created by charlotte on 19/02/17.
  */
+@Repository
 public class UsersDao {
 
     NamedParameterJdbcTemplate namedParameterJdbcTemplate;
