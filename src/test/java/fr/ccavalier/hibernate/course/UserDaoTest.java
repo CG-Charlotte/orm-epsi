@@ -24,7 +24,7 @@ public class UserDaoTest {
 
     private EmbeddedDatabase db;
 
-    @Autowired
+
     UserDao userDao;
 
     @Before
@@ -37,8 +37,8 @@ public class UserDaoTest {
                 .build();
 
         NamedParameterJdbcTemplate template = new NamedParameterJdbcTemplate(db);
-        //userDao = new UserDao();
-        //userDao.setNamedParameterJdbcTemplate(template);
+        userDao = new UserDao();
+        userDao.setNamedParameterJdbcTemplate(template);
     }
 
     @Test
