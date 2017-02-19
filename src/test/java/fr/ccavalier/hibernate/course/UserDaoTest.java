@@ -5,6 +5,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabase;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
@@ -23,6 +24,7 @@ public class UserDaoTest {
 
     private EmbeddedDatabase db;
 
+    @Autowired
     UserDao userDao;
 
     @Before
@@ -35,12 +37,12 @@ public class UserDaoTest {
                 .build();
 
         NamedParameterJdbcTemplate template = new NamedParameterJdbcTemplate(db);
-        userDao = new UserDao();
-        userDao.setNamedParameterJdbcTemplate(template);
+        //userDao = new UserDao();
+        //userDao.setNamedParameterJdbcTemplate(template);
     }
 
     @Test
-    public void testFindByname() {
+    public void testFindByName() {
 
         User user = userDao.findByFirstName("Jean");
 
