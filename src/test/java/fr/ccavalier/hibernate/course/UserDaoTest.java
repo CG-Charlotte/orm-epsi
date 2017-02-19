@@ -5,21 +5,22 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabase;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.TestExecutionListeners;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-
-import java.util.List;
+import org.springframework.test.context.support.DependencyInjectionTestExecutionListener;
 
 /**
  * Created by ccavalie on 31/01/2017.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("/spring-test-context.xml")
+@TestExecutionListeners(listeners = {DependencyInjectionTestExecutionListener.class})
+
 public class UserDaoTest {
 
     private EmbeddedDatabase db;
