@@ -3,7 +3,7 @@ content:
   title: Hibernate
   plan:
    - title: Welcome to ORM 101
-     description: Introduction
+     description: Rappels SQL
      statement: course/Introduction.md
 
 projects:
