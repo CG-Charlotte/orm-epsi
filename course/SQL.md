@@ -8,7 +8,7 @@ Soit le modele physique suivant:
 A partir de celui ci remplissez les requetes manquantes dans l'editeur.
 
 La premiere requete doit retourner les numéros et libellés des articles dont le stock est inférieur à 10.
- La deuxieme retournera les noms et adresses des fournisseurs qui proposent des articles
+La deuxieme retournera les noms et adresses des fournisseurs qui proposent des articles
 pour lesquels le délai d'approvisionnement est supérieur à 20 jours.
 
 

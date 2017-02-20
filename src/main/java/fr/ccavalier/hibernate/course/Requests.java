@@ -19,17 +19,23 @@ public class Requests {
         this.jdbcTemplate = namedParameterJdbcTemplate;
     }
 
+    /**
+     * retourner les numéros et libellés des articles dont le stock est inférieur à 10
+     *
+     */
     public List findNameQuantityInf10() {
-        String sql = "SELECT LIBELLE from PRODUITS where STOCK < 10";//Ecrire votre requete ici
+        String sql = "";//Ecrire votre requete ici
         List result = jdbcTemplate.queryForList(sql);
         return result;
 
     }
 
+    /**
+     * retourner les noms et adresses des fournisseurs qui proposent des articles
+     * pour lesquels le délai d'approvisionnement est supérieur à 20 jours
+     */
     public List findFourDelaiSup20(){
-        String sql = "SELECT DISTINCT NOM " +
-                "FROM FOURNISSEURS F JOIN ACHETER A ON F.id=A.ID_FOUR " +
-                "WHERE DELAI>20";
+        String sql = "";//Ecrire votre requete ici
 
         List result = jdbcTemplate.queryForList(sql);
         return result;
