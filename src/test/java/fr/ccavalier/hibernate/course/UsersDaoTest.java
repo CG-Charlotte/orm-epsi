@@ -46,7 +46,7 @@ public class UsersDaoTest {
         System.out.println("StartTest");
         List<User> users = usersDao.findAll();
 
-        Assert.assertNotNull(users);
-        Assert.assertEquals(3, users.size());
+        Assert.assertNotNull("findAll hasn't return anything, have you fill the missing request?",users);
+        Assert.assertEquals("findAll has return an incorrect number of item : "+users.size(),3, users.size());
     }
 }
