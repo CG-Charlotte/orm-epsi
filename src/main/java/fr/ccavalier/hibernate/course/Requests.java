@@ -24,7 +24,7 @@ public class Requests {
      *
      */
     public List findNameQuantityInf10() {
-        String sql = "";//Ecrire votre requete ici
+        String sql = "SELECT LIBELLE from PRODUITS where STOCK < 10";//Ecrire votre requete ici
         List result = jdbcTemplate.queryForList(sql);
         return result;
 

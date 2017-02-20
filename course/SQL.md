@@ -12,4 +12,4 @@ La deuxieme retournera les noms et adresses des fournisseurs qui proposent des a
 pour lesquels le délai d'approvisionnement est supérieur à 20 jours.
 
 
-@[First Exercise]({"stubs": ["src/main/java/fr/ccavalier/hibernate/course/Requests.java","src/test/resources/products-db.sql","src/test/resources/products-data.sql"],"command": "fr.ccavalier.hibernate.course.RequestsTest#findNameQuantityInf10", "layout":"aside"})
+@[First Exercise]({"stubs": ["src/main/java/fr/ccavalier/hibernate/course/Requests.java","src/test/resources/products-db.sql","src/test/resources/products-data.sql"],"command": "fr.ccavalier.hibernate.course.RequestsTest#test_findNameQuantityInf10", "layout":"aside"})
