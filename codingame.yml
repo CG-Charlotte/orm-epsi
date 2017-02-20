@@ -12,6 +12,6 @@ projects:
         name: codingame/maven3-builder
         version: 1.0
     runner:
-        name: codingame/junit4-runner
+        name: codingame/junit4-runner:latest 
         version: 3.0
     
