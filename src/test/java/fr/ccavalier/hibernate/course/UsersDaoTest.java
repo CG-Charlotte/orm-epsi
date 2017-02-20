@@ -43,7 +43,6 @@ public class UsersDaoTest {
 
     @Test
     public void testFindAll(){
-        System.out.println("StartTest");
         List<User> users = usersDao.findAll();
 
         Assert.assertNotNull("findAll hasn't return anything, have you fill the missing request?",users);
