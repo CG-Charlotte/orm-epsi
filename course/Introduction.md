@@ -13,9 +13,5 @@ utilisé sur la totalité des systèmes d'information.
 
 Il est important de bien maitriser son usage avant de s'en abstraire. Nous pourrons ainsi faire un meilleur usage des outils de plus haut niveau.
 
-## Premier Exemple
-Essayons de modifier cette application JAVA de facon à recuperer la totalité des utilisateurs de la base.
-@[First Exercise]({"stubs": ["src/main/java/fr/ccavalier/hibernate/course/UsersDao.java","src/test/resources/create-db.sql","src/test/resources/insert-data.sql"],"command": "fr.ccavalier.hibernate.course.UsersDaoTest#testFindAll"})
-
-
+Apres quelques rappels de SQL, nous attaquerons le vif du sujet en essayant de transformer une simple association en objet.
 

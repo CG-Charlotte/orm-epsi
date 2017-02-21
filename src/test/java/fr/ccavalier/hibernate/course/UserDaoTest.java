@@ -51,6 +51,8 @@ public class UserDaoTest {
         Assert.assertEquals(1, user.getId().intValue());
         Assert.assertEquals("Jean", user.getFirstName());
         Assert.assertEquals("Perpignan", user.getCity());
+        Assert.assertEquals(2, user.getContacts().size());
+        Assert.assertEquals("0463626712",user.getContacts().get(0).getValue());
 
     }
 

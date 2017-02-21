@@ -4,6 +4,7 @@ import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 /**
  * Created by charlotte on 19/02/17.
@@ -18,4 +19,8 @@ public final class UserMapper implements RowMapper<User> {
         user.setCity(rs.getString("address"));
         return user;
     }
+
+
+
+
 }

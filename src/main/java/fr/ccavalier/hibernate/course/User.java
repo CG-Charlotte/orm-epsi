@@ -1,5 +1,8 @@
 package fr.ccavalier.hibernate.course;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by ccavalie on 31/01/2017.
  */
@@ -9,8 +12,42 @@ public class User {
     Integer id;
     String firstName;
     String lastName;
+
     String city;
     String email;
+
+    static class Media{
+        String value;
+        String type;
+
+        public String getType() {
+            return type;
+        }
+
+        public void setType(String type) {
+            this.type = type;
+        }
+
+        public String getValue() {
+            return value;
+        }
+
+        public void setValue(String value) {
+            this.value = value;
+        }
+    }
+
+    private List<Media> contacts = new ArrayList<Media>();
+
+    public List<Media> getContacts() {
+        return contacts;
+    }
+
+    public void setContacts(List<Media> contacts) {
+        this.contacts = contacts;
+    }
+
+
 
     public Integer getId() {
         return id;

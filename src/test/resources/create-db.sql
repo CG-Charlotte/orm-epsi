@@ -6,3 +6,14 @@ CREATE TABLE users (
   last_name  VARCHAR(30),
   address  VARCHAR(80)
 );
+
+CREATE TABLE media (
+    id INT primary key,
+    type varchar(30)
+);
+
+create TABLE media_users(
+    id_user int references USERS(ID),
+    id_media int references media(ID),
+    contact varchar(50)
+);

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -38,7 +39,16 @@ public class UserDao {
                 new UserMapper());
 
         //new BeanPropertyRowMapper(Customer.class));
+        
+        String getMedias = "Select * from media_users as asso, media as m" +
+                "  where asso.id_user =:id_user and asso.id_media = m.id";
+        
+        params.clear();
+        params.put("id_user", result.getId());
 
+        List<Map<String, Object>> asso_media = namedParameterJdbcTemplate.queryForList(getMedias, params);
+
+        result.setContacts(UserMapper.mapContacts(asso_media));
         return result;
 
     }
@@ -62,6 +72,17 @@ public class UserDao {
             user.setLastName(rs.getString("last_name"));
             user.setCity(rs.getString("address"));
             return user;
+        }
+
+        public static List<User.Media> mapContacts(List<Map<String, Object>> asso_media) {
+            List<User.Media> mediaList = new ArrayList<User.Media>();
+            for(Map<String, Object> tuple : asso_media){
+                User.Media media = new User.Media();
+                media.setType((String)tuple.get("type"));
+                media.setValue((String)tuple.get("contact"));
+                mediaList.add(media);
+            }
+            return mediaList;
         }
     }
 
