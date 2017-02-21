@@ -35,9 +35,24 @@ public class Requests {
      * pour lesquels le délai d'approvisionnement est supérieur à 20 jours
      */
     public List findFourDelaiSup20(){
-        String sql = "";//Ecrire votre requete ici
-
+        String sql = "SELECT DISTINCT NOM " +
+                "FROM FOURNISSEURS F JOIN ACHETER A ON F.id=A.ID_FOUR " +
+                "WHERE DELAI>20";
         List result = jdbcTemplate.queryForList(sql);
         return result;
     }
+
+    /**
+     * Supprimer les fraises de la table des produits
+     */
+    public void deleteFraises(){
+        String sql = "Delete from PRODUITS where LIBELLE like '%fraise%'";
+        jdbcTemplate.execute(sql);
+
+    }
+
+    public List queryForList(String sql){
+        return jdbcTemplate.queryForList(sql);
+    }
+
 }

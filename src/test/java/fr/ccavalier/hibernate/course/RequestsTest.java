@@ -74,6 +74,13 @@ public class RequestsTest {
         Assert.assertTrue(libelles.contains("Sodebo"));
     }
 
+    @Test
+    public void test_delete(){
+        requests.deleteFraises();
+        List<Map<String, Object>> values = requests.queryForList("Select * from PRODUITS where LIBELLE ='fraises'");
+        Assert.assertTrue(values.isEmpty());
+    }
+
     @After
     public void tearDown() {
         db.shutdown();
