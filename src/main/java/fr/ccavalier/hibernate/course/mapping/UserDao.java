@@ -1,6 +1,7 @@
-package fr.ccavalier.hibernate.course;
+package fr.ccavalier.hibernate.course.mapping;
 //[imports] { autofold
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -21,7 +22,7 @@ public class UserDao {
     NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 
     @Autowired
-    public void setNamedParameterJdbcTemplate(NamedParameterJdbcTemplate namedParameterJdbcTemplate) {
+    public UserDao(NamedParameterJdbcTemplate namedParameterJdbcTemplate) {
         this.namedParameterJdbcTemplate = namedParameterJdbcTemplate;
     }
 
@@ -59,7 +60,18 @@ public class UserDao {
         Map<String, Object> params = new HashMap<String, Object>();
         String sql = "INSERT into users(first_name, last_name, address) values ('"+user.getFirstName()+"','"+user.getLastName()+"','"+user.getCity()+"')";
         int value = namedParameterJdbcTemplate.update(sql, params);
-        
+    }
+
+    /**
+     * get all users from database
+     * @return List<User> All Users
+     */
+    public List<User> findAll() {
+        Map<String, Object> params = new HashMap<String, Object>();
+        String sql = "Select * from USERS";//write your request here
+        List<User> result = namedParameterJdbcTemplate.query(sql, params, new UserMapper());
+        return result;
+
     }
     
 

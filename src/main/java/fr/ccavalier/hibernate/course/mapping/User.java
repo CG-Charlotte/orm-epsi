@@ -1,4 +1,4 @@
-package fr.ccavalier.hibernate.course;
+package fr.ccavalier.hibernate.course.mapping;
 
 import java.util.ArrayList;
 import java.util.List;
