@@ -11,4 +11,4 @@ Nous allons essayer de mapper l'association définie ci dessous dans notre hiera
 -[ ] Recuperer l'association media client
 -[ ] Mapper les valeurs correctes au media de l'objet user
 
-@[Mapping JDBC]({"stubs": ["src/main/java/fr/ccavalier/hibernate/course/UserDao.java","src/main/java/fr/ccavalier/hibernate/course/User.java","src/test/resources/create-db.sql","src/test/resources/insert-data.sql"],"command": "fr.ccavalier.hibernate.course.UserDaoTest#testFindByName", "layout":"aside"})
+@[Mapping JDBC]({"stubs": ["src/main/java/fr/ccavalier/hibernate/course/mapping/UserDao.java","src/main/java/fr/ccavalier/hibernate/course/mapping/User.java","src/test/resources/mapping/create-db.sql","src/test/resources/mapping/insert-data.sql"],"command": "fr.ccavalier.hibernate.course.mapping.UserDaoTest#testFindByName", "layout":"aside"})

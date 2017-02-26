@@ -1,4 +1,4 @@
-package fr.ccavalier.hibernate.course;
+package fr.ccavalier.hibernate.course.requests;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -15,8 +15,8 @@ public class Requests {
     JdbcTemplate jdbcTemplate;
 
     @Autowired
-    public void setJdbcTemplate(JdbcTemplate namedParameterJdbcTemplate) {
-        this.jdbcTemplate = namedParameterJdbcTemplate;
+    public Requests(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
     }
 
     /**
@@ -46,7 +46,6 @@ public class Requests {
     public void deleteFraises(){
         String sql = "";//Ecrire votre requete ici
         jdbcTemplate.execute(sql);
-
     }
 
     public List queryForList(String sql){
