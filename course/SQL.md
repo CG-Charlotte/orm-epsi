@@ -14,13 +14,13 @@ La deuxieme retournera les noms et adresses des fournisseurs qui proposent des a
 pour lesquels le délai d'approvisionnement est supérieur à 20 jours.
 
 
-@[First Exercise]({"stubs": ["src/main/java/fr/ccavalier/hibernate/course/requests/Requests.java","src/test/resources/products-db.sql","src/test/resources/products-data.sql"],"command": "fr.ccavalier.hibernate.course.requests.RequestsTest#test_findNameQuantityInf10", "layout":"aside"})
+@[First Exercise]({"stubs": ["src/main/java/fr/ccavalier/hibernate/course/requests/Requests.java","src/test/resources/requests/products-db.sql","src/test/resources/requests/products-data.sql"],"command": "fr.ccavalier.hibernate.course.requests.RequestsTest#test_findNameQuantityInf10", "layout":"aside"})
 
-@[Second Exercise]({"stubs": ["src/main/java/fr/ccavalier/hibernate/course/requests/Requests.java","src/test/resources/products-db.sql","src/test/resources/products-data.sql"],"command": "fr.ccavalier.hibernate.course.requests.RequestsTest#test_findFourDelaiSup20", "layout":"aside"})
+@[Second Exercise]({"stubs": ["src/main/java/fr/ccavalier/hibernate/course/requests/Requests.java","src/test/resources/requests/products-db.sql","src/test/resources/requests/products-data.sql"],"command": "fr.ccavalier.hibernate.course.requests.RequestsTest#test_findFourDelaiSup20", "layout":"aside"})
 
 Enfin vous completerez la requete qui supprime les fraises de la table produits
 
-@[Troisieme Exercise]({"stubs": ["src/main/java/fr/ccavalier/hibernate/course/requests/Requests.java","src/test/resources/products-db.sql","src/test/resources/products-data.sql"],"command": "fr.ccavalier.hibernate.course.requests.RequestsTest#test_delete", "layout":"aside"})
+@[Troisieme Exercise]({"stubs": ["src/main/java/fr/ccavalier/hibernate/course/requests/Requests.java","src/test/resources/requests/products-db.sql","src/test/resources/requests/products-data.sql"],"command": "fr.ccavalier.hibernate.course.requests.RequestsTest#test_delete", "layout":"aside"})
 
 
 ## Syntaxe Requete SQL
