@@ -8,7 +8,13 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.List;
+import java.util.function.Consumer;
+import java.util.function.Predicate;
+
+import static org.junit.Assert.fail;
 
 /**
  * Created by ccavalie on 31/01/2017.
@@ -20,17 +26,28 @@ public class UserDaoTest {
     @Autowired
     UserDao userDao;
 
+    public <T, V> void assertMethodExistAndTestExecution(T instance, String methodName, Consumer<V> assertion) {
+        try {
+            Method getContact = instance.getClass().getMethod(methodName);
+            assertion.accept((V) getContact.invoke(instance));
+        } catch (NoSuchMethodException|IllegalAccessException|InvocationTargetException e) {
+            fail(instance.getClass().getSimpleName()+ " does not implement method "+methodName);
+        }
+    }
+
     @Test
     public void testFindByName() {
-
         User user = userDao.findByFirstName("Jean");
 
         Assert.assertNotNull(user);
         Assert.assertEquals(1, user.getId().intValue());
         Assert.assertEquals("Jean", user.getFirstName());
         Assert.assertEquals("Perpignan", user.getCity());
-        Assert.assertEquals(2, user.getContacts().size());
-        Assert.assertEquals("0463626712", user.getContacts().get(0).getValue());
+        Assert.assertEquals("Perpignan", user.getCity());
+        assertMethodExistAndTestExecution(user, "getContacts", (List<?> list) -> {
+            Assert.assertEquals(2, list.size());
+            assertMethodExistAndTestExecution(list.get(0), "getValue", (String s) -> Assert.assertEquals("0463626712", s));
+        });
 
     }
 
