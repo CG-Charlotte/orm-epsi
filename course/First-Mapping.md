@@ -23,5 +23,12 @@ Mais la table User possède une association vers des Media qui correspond à l'e
 -[x] UserDao.MediaMapper.mapRow : Ecrire le RowMapper permettant de convertir un ResultSet en un Media
 -[x] UserDao.findByFirstName : Mapper les valeurs correctes au media de l'objet User remonté dans la requete
 
-@[Mapping Association]({"stubs": ["src/main/java/fr/ccavalier/hibernate/course/mapping/UserDao.java","src/main/java/fr/ccavalier/hibernate/course/mapping/User.java","src/test/resources/mapping/create-db.sql","src/test/resources/mapping/insert-data.sql"],"command": "fr.ccavalier.hibernate.course.mapping.UserDaoTest#testMediaMappingOnFindByName", "layout":"aside"})
+@[Mapping association]({"stubs": ["src/main/java/fr/ccavalier/hibernate/course/mapping/UserDao.java","src/main/java/fr/ccavalier/hibernate/course/mapping/User.java","src/test/resources/mapping/create-db.sql","src/test/resources/mapping/insert-data.sql"],"command": "fr.ccavalier.hibernate.course.mapping.UserDaoTest#testMediaMappingOnFindByName", "layout":"aside"})
 
+
+Maintenant, au tour de l'insertion de donnée.
+
+?[Etapes à suivre]
+- [x] UserDao.add : Completez la méthode pour insérer un User
+
+@[Insert User]({"stubs": ["src/main/java/fr/ccavalier/hibernate/course/mapping/UserDao.java","src/main/java/fr/ccavalier/hibernate/course/mapping/User.java","src/test/resources/mapping/create-db.sql","src/test/resources/mapping/insert-data.sql"],"command": "fr.ccavalier.hibernate.course.mapping.UserDaoTest#testAddUser", "layout":"aside"})
