@@ -15,5 +15,5 @@ CREATE TABLE media (
 
 create TABLE media_users(
     id_user int references USERS(ID),
-    id_media int references media(ID),
+    id_media int references media(ID)
 );
